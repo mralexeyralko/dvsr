@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <tittle></tittle>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    
+    <section class="hero is-primary is-small has-background-dark">
+ 
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="http://dvsr.ru">
+                DRVS.RU
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+
+              </span>
+            </div>
+            <div class="navbar-end">
+            
+                {% if user.is_authenticated %}
+                <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="navbar-item" href="{% url 'login' %}">Login</a>
+                {% endif %}
+
+            
+                {% if user.is_authenticated %}
+                <a class="navbar-item" href="{% url 'password_change' %}">Change pswd</a>
+                {% endif %}
+
+
+              </a>
+            </span>
+          </div>
+          </div>
+        </nav>
+      </div>
+    
+
+      <div class="hero-body">
+        <div class="container has-text-centered has-text-warning">
+          <h1 class="title">
+            ДВС Ресурс
+          </h1>
+          <h2 class="subtitle">
+            We work - you do whatever you want
+          </h2>
+        </div>
+      </div>
+    
+
+      <div class="hero-foot is-offset-one-third-widescreen">
+        <nav class="tabs">
+          <div class="container">
+            <ul>
+              <li class="is-active">
+              <li><a>Проекты</a></li>
+              <a  href="../tabel/">Табель</a></li>
+              <li><a>Командировки</a></li>
+               </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    
+    
+    <div class="column is-one-third-widescreen is-offset-one-third-widescreen">
+        <div class="box">
+
+
+<nav class="level is-half-widescreen">
+    <div class="level-item has-text-centered ">
+      <div>
+        <p class="heading">Закрытых проектов</p>
+        <p class="title">3,456</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">В работе</p>
+        <p class="title">123</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Открытых кейсов</p>
+        <p class="title">456K</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Зыкрытые кейсы</p>
+        <p class="title">789</p>
+      </div>
+    </div>
+  </nav>
+          </div>
+    </div>
+  
+   
+{% block page_content %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load bulma_tags %}
+{% block page_content %}
+
+
+
+<div class="column is-one-third-widescreen is-offset-one-third-widescreen">
+    <div class="box">
+<section class="section">
+    <div class="container">
+      <h1 class="title">        
+ 
+      <h2 class="subtitle">
+          <div class="column">
+        <div class="box"> 
+        <table>
+
+          
+
+
+        <div class="select is-info is-small is-success">
+          <select>
+            <option>Choose your destiny:</option>
+            {% for e in employerxpo %}
+            <option value="{{ e.name }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
+            {% endfor %}
+          </select>
+        </div>
+    
+
+      </table>
+      </h2></div>
+    </div></div>
+  </section>
+  </div></div>
+
+
+  
+
+
+
+
+
+          
+  
+  
+{% endblock %}
+
+
