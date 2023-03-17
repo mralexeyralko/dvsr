@@ -16,17 +16,21 @@
         <table>
 
           
-
-
-        <div class="select is-info is-small is-success">
+          <form>
+            {% csrf_token %}
+            {{ form }}
+        <div class="select is-info is-small is-success is-centered">
           <select>
-            <option>Choose your destiny:</option>
+            <option>Choose employee:</option>
             {% for e in employerxpo %}
             <option value="{{ e.name }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
             {% endfor %}
-          </select>
-        </div>
-    
+            </select>
+            <button type="submit" class="button is-primary is-small is-centered">Get data</button>
+            </form>      
+</div><br>
+        
+
 
       </table>
       </h2></div>
