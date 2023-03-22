@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from tabel import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dvsr_mainpage.urls')), 
     path('tabel/', include('tabel.urls')), 
     re_path(r"^", include('users.urls')),
-    
+    path('employee/',views.get_name, name='submit'), 
 
 ]

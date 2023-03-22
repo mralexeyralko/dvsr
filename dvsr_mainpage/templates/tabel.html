@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bulma_tags %}
+
 {% block page_content %}
 
 
@@ -14,22 +15,25 @@
           <div class="column">
         <div class="box"> 
         <table>
+          <form name="employee" action="/employee/" method="post">
+            <div class="select is-info is-small is-success is-centered">
+              <select>
+                <option>Choose employee:</option>
+                {% for e in employerxpo %}
+                <option value="{{ e.EmpId }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
+                {% endfor %}
+              </select>            
+                {% csrf_token %}
+                {{ form }}
+                <button name="get_name" type="submit" method="submit" class="button is-primary is-small is-centered">Get data</button>
+              
+          </form> 
+            
 
-          
-          <form>
-            {% csrf_token %}
-            {{ form }}
-        <div class="select is-info is-small is-success is-centered">
-          <select>
-            <option>Choose employee:</option>
-            {% for e in employerxpo %}
-            <option value="{{ e.name }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
-            {% endfor %}
-            </select>
-            <button type="submit" class="button is-primary is-small is-centered">Get data</button>
-            </form>      
+            
 </div><br>
-        
+
+
 
 
       </table>
