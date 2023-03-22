@@ -19,5 +19,6 @@ def get_name(request):
         if 'GetName' in request.POST:
             print('********************')
             form = request.POST['GetName']
+            print('here is the form', form, '!!!!!!!!!!!!!!!!!')
         return render(request, 'employee.html', {'form': form})
 

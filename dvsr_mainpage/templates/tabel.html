@@ -15,12 +15,12 @@
           <div class="column">
         <div class="box"> 
         <table>
-          <form name="GetName" action="/employee/" method="post">
+          <form id="GetName" name="GetName" action="/employee/" method="post">
             <div class="select is-info is-small is-success is-centered">
               <select id="GetName" name="GetName">
                 <option>Choose employee:</option>
                 {% for e in employerxpo %}
-                <option value="{{ e.EmpId }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
+                <option value="{{ e.name }} {{ e.midname }} {{ e.lastname }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
                 {% endfor %}
               </select>            
                 {% csrf_token %}
