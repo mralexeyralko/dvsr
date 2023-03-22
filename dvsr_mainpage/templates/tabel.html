@@ -15,9 +15,9 @@
           <div class="column">
         <div class="box"> 
         <table>
-          <form name="employee" action="/employee/" method="post">
+          <form name="GetName" action="/employee/" method="post">
             <div class="select is-info is-small is-success is-centered">
-              <select>
+              <select id="GetName" name="GetName">
                 <option>Choose employee:</option>
                 {% for e in employerxpo %}
                 <option value="{{ e.EmpId }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>

@@ -16,7 +16,8 @@ def tabel(request):
 
 def get_name(request):
     if request.method == 'POST':
-        print('********************')
-        EmpId = request.POST['EmpId']
-        return render(request, 'employee.html', {'EmpId': EmpId})
+        if 'GetName' in request.POST:
+            print('********************')
+            form = request.POST['GetName']
+        return render(request, 'employee.html', {'form': form})
 
