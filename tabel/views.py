@@ -17,8 +17,14 @@ def tabel(request):
 def get_name(request):
     if request.method == 'POST':
         if 'GetName' in request.POST:
-            print('********************')
             form = request.POST['GetName']
-            print('here is the form', form, '!!!!!!!!!!!!!!!!!')
-        return render(request, 'employee.html', {'form': form})
+            # employeeData = TabelDataView.objects.filter(name )
+            formList = form.rsplit(" ")
+            empNumberFromList = str(formList[0])
+            print(empNumberFromList)
+            query = TabelDataView.objects.all().filter(EmpId = empNumberFromList)
+            # query = TabelDataView.objects.get(EmpId = empNumberFromList)
+            print(query)
+            context = {'form': form, 'query': query}
+            return render(request, 'employee.html', context)
 

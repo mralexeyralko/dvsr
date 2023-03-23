@@ -20,7 +20,7 @@
               <select id="GetName" name="GetName">
                 <option>Choose employee:</option>
                 {% for e in employerxpo %}
-                <option value="{{ e.name }} {{ e.midname }} {{ e.lastname }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
+                <option value="{{ e.oid }} {{ e.name }} {{ e.midname }} {{ e.lastname }}">{{ e.name }} {{ e.midname }} {{ e.lastname }}</option>
                 {% endfor %}
               </select>            
                 {% csrf_token %}

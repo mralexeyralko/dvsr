@@ -14,16 +14,20 @@
       <h2 class="subtitle">
           <div class="column">
         <div class="box"> 
-        <table>
 
-{{ form }}
-             
+
+{{ form }} входил, выходил
+<table>
+{% for q in query %}
+<tr><td> {{ q.Time }} </td></tr>
+{% endfor %}
+</table>
 </div><br>
 
 
 
 
-      </table>
+
       </h2></div>
     </div></div>
   </section>
